@@ -1,0 +1,83 @@
+:root {
+  --primary-color: #4abdac; /* 水色 */
+  --secondary-color: #fff;
+  --menu-background-color: #fff;
+  --menu-link-color: #4abdac; /* 水色 */
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.header {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo {
+  flex: 1;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.nav {
+  flex: 3;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu li {
+  margin: 0 10px;
+}
+
+.menu a {
+  color: var(--menu-link-color);
+  text-decoration: none;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--menu-background-color);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+  }
+
+  .menu li {
+    margin: 10px 0;
+  }
+
+  .menu a {
+    color: var(--menu-link-color);
+    text-decoration: none;
+    font-size: 20px;
+  }
+}
